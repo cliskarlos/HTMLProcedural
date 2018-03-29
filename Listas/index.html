@@ -1,0 +1,78 @@
+<html>
+
+    <head>
+    
+        <style>
+        
+            body
+            {
+                background: #ff0000;
+            }
+            
+            nav
+            {
+                background: #00ff00;
+                width: 300px;
+                height: 100vh;
+            }
+            
+            ul
+            {
+                padding: 0;
+            }
+            
+            li
+            {
+                background: #0000ff;
+                margin: 5px;
+                list-style: none;
+                color: white;
+                height: 50px;
+            }
+            
+            .class2
+            {
+                background: #ffffff;
+                color: #000000;
+            }
+        
+        </style>
+        
+    </head>
+    
+    <body>
+    
+        <script>
+            
+            /* Obtenemos el elemento BODY (ya existe)
+            ---------------------------------------------*/
+            var auxBody = document.getElementsByTagName('body')[0];
+
+            /* Creamos el elemento NAV (por crear un contendor cualquiera)
+            --------------------------------------------------------------------*/
+            var auxNav = document.createElement('nav');
+            auxBody.appendChild(auxNav); // Añadimos el elemento NAV a el elemento BODY
+            
+            /* Creamos el elemento UL, para contener los items de las listas
+            -------------------------------------------------------------------*/
+            var auxUl = document.createElement('ul');
+            auxNav.appendChild(auxUl); // Lo añadimos al elemento NAV
+            
+            /* Creamos automaticamente varios items de la lista
+            -------------------------------------------------------------*/
+            for(var i = 0; i < 10; i++)
+            {
+                /* Creamos el elemento LI, el item individual con los atributos que queramos
+                --------------------------------------------------------------------------------*/
+                var auxLi = document.createElement('li');
+                auxLi.setAttribute('id', 'item' + i); // Definimos el atributo ID
+                auxLi.setAttribute('class', 'class' + i); // Definimos el atributo CLASS
+                auxLi.textContent = "Hola, soy el item " + i; // Definimos el texto que contiene el elemento
+                auxUl.appendChild(auxLi); // Lo añadimos al UL
+            }
+
+        </script>
+    
+    </body>
+
+</html>
